@@ -1,0 +1,370 @@
+html{
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body{
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.dashboardWrapper{
+  height: 100%;
+  transition: 1s;
+}
+
+.dashboardBody{
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	left: 0;
+	transition: 1s;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.dashboardRow{
+  width: 100%;
+  height: 45%; 
+  margin:0;
+}
+
+.sidebarWrapper{
+	position: relative;
+	left: 0;
+	width: 350px;
+	height: 100%;
+}
+
+.hide{
+  overflow-y: scroll;
+}
+
+.mainContent{
+	width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.mainContentDiv{
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mainContentHead{
+  width: 100%;
+  height: 10%;
+  padding: 1.25rem;
+}
+
+.mainContentCover{
+  position: absolute;
+  top: 0;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+.farmRow {
+  width: 80%;
+  height: auto;
+  border-radius: 0 3rem 3rem 0;
+  background-color: #f4f3ed;
+  padding: 0.5rem 2rem 0.5rem 3rem;
+  margin: 0.5rem 0.5rem 0.5rem -2rem;
+  display: flex;
+  align-content: center;
+  transition: 1s;
+  z-index: 2;
+}
+
+.farmRowActive{
+  width: 80%;
+  height: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-content: center;
+  color: white;
+  background-color: rgb(255,169,67);
+  margin: 0.5rem 0.5rem 0.5rem 2rem;
+  border-radius: 3rem;
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.farmRowHead {
+  height: auto;
+  border-radius: 0 3rem 3rem 0;
+  padding: 0.5rem 0rem 0.5rem 2rem;
+  margin: 0.5rem 0.5rem 0.5rem -1rem;
+  display: flex;
+  align-content: center;
+  background: linear-gradient(90deg, rgba(25,64,255,1) 0%, rgba(62,255,116,1) 90%);
+}
+
+.newButtonColumn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.5rem;
+  transition: 0.5s;
+}
+
+.dashboardCol{
+  padding: 0.5rem;
+  height: 100%;
+}
+
+.dashboardCard{
+  padding: 1rem;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.dashboardCardHead{
+  margin: -1rem -1rem 0 -1rem;
+  background: #FFD25A;
+  padding: 0.25rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.inactive{
+  background-color: rgba(191, 191, 191,1);
+}
+
+.cycleInitCover{
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboardShrink{
+  transform: scale(0.9);
+  position: fixed;
+  margin-top: -3vh;
+  width: 100%;
+  background-color: #e7e7e7;
+  overflow-y: hidden;
+  border-radius: 0.5rem;
+}
+
+.detailTrigger{
+  cursor: pointer;
+}
+
+.detailWrapper{
+  position: fixed;
+  margin: 3rem 0;
+  top: 200vh;
+  width: 100vw;
+  height: auto;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.detailBackground{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0,0,0,0.05);
+  z-index: -100;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.detailContent{
+
+}
+
+.detailBody{
+  width: 95vw;
+  height: 90vh;
+  background-color: #e7e7e7;
+  border-radius: 0.5rem;
+}
+
+.dashboardNavigate{
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.panelIcon{
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.panelIcon:hover{
+  transform: scale(1.5);
+}
+
+.event{
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.timelineEvent{
+  padding: 0.25rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+}
+
+.pending{
+  background: rgba(255, 222, 112, 1);
+}
+
+.completed{
+  background: rgba(189, 255, 128, 1);
+}
+
+
+@media only screen and (max-width: 600px) {
+	.sidebarWrapper{
+		position: relative;
+		left: 0;
+		width: 100vw;
+		height: 100%;
+    overflow: hidden;
+	}
+
+	.farmRowHead {
+		width: 80%;
+	}
+
+  .detailBody{
+    width: 95vw;
+    height: 90vh;
+    background-color: #e7e7e7;
+    border-radius: 0.5rem;
+    overflow: scroll;
+  }
+
+  .mainContentDiv{
+    position: relative;
+    z-index: 100;
+    display: block;
+    flex-wrap: nowrap;
+    height: auto;
+  }
+
+  .mainContentHead{
+    width: 100%;
+    height: auto;
+    padding: 1.25rem;
+  }
+
+  .dashboardRow{
+    margin: 0;  
+    width: 100%;
+    height: auto; 
+  }
+
+  .dashboardCol{
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .dashboardCard{
+    padding: 1rem;
+    height: auto;
+    border-radius: 0.5rem;
+    min-height: 30vh;
+  }
+
+
+}
+
+#stockCardDesk{
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+.stockcolumn {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+  height: 45vh;
+  margin: 1rem 0;
+}
+
+.stockrow {
+  margin: 0 -5px;
+}
+
+
+.stockrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.stockCardCol{
+  overflow-y: scroll;
+}
+
+
+@media screen and (max-width: 600px) {
+  .stockcolumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .stockcard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+  .stockCardCol{
+    height: '';
+    overflow-y: '';
+  }
+
+}
+
+
+.stockcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 100%;
+  margin: 1rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  color: black;
+}

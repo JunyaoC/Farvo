@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex justify-content-center" style="width: 100%;" id="successfulDiv">
+            </div>
+            <h1 class="d-flex justify-content-center text-center farvoTitle" style="color:#32322C;">Sign In</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form id="signinForm" method="POST" action="assets/php/userLoginProc.php">
+                <div class="form-group"><input class="form-control" type="email" name="user_email" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="password" name="user_password" placeholder="Password"></div>
+                <div class="form-row" style="padding: 1rem 0 0 0;">
+                   <div class="col-12 d-flex justify-content-center"><button class="btn" style="background-color: #32322C; color: #FFD25A;" type="submit" >Sign In</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row phoneContent">
+        <div class="col text-center">
+            <p><a href="#" id="registerLink">Register</a></p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var code = url.searchParams.get("code");
+        if(code == 0){
+            $('#successfulDiv').append('<div class="alert alert-success" role="alert" style="width: 300px;">Registration successful. Please login!</div>');
+        }
+
+        if(code == 1){
+            $('#successfulDiv').append('<div class="alert alert-danger" role="alert" style="width: 300px;">Registration failed! User existed.</div>');
+        }
+
+        if(code == 2){
+            $('#successfulDiv').append('<div class="alert alert-warning" role="alert" style="width: 300px;">Please sign in.</div>');
+        }
+    
+
+</script>
+
+

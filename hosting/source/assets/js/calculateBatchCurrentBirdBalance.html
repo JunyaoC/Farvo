@@ -1,0 +1,80 @@
+<script type="text/javascript">
+    
+    var targetCycle = window._dashboard.farm_list[window._dashboard.view_farm_id].active_cycle_id;
+
+                var cycleList = window._dashboard.farm_list[window._dashboard.view_farm_id].cycle_list;
+
+                var houseBalance = {};
+                var recordedDateArr = [];
+
+                for(var i=0;i<cycleList.length;i++){
+
+                    if(cycleList[i].cycle_id == targetCycle){
+
+                        var remainderBird = 0;
+
+                        var batchList =cycleList[i].batch_list;
+                        var batchRecordedDate = {};
+
+                        for(var j=0;j<batchList.length;j++){
+
+                            var recordedDateArr = [];
+                            var batchRecord = batchList[j].batch_record;
+
+                            for(var k=0;k<batchRecord.length;k++){
+                                if(recordedDateArr.indexOf(batchRecord[k].bird_record_date) == -1){
+                                    recordedDateArr.push(batchRecord[k].bird_record_date);
+                                }
+                            }
+
+                            batchRecordedDate[batchList[j].batch_uid] = recordedDateArr;
+
+                            var house_id_arr = [];
+
+                            for(var k=0;k<batchRecord.length;k++){
+                                if(house_id_arr.indexOf(batchRecord[k].bird_house_id) == -1){
+
+                                    for(var obj in window._dashboard.farm_list){
+
+                                        for(var j=0;j<window._dashboard.farm_list[obj].house_list.length;j++){
+                                            if(window._dashboard.farm_list[obj].house_list[j].house_id == batchRecord[k].bird_house_id){
+                                                house_id_arr.push(window._dashboard.farm_list[obj].house_list[j].house_id);
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+
+                            
+
+                        }
+
+                        console.log(batchRecordedDate);
+
+                        
+
+                        for(var j=0;j<batchList.length;j++){
+
+                            var lastDate;
+
+
+                            for(var obj in batchRecordedDate){
+                                if(batchList[j].batch_uid == obj){
+                                    lastDate = batchRecordedDate[obj];
+                                    lastDate = lastDate[lastDate.length - 1];                                   
+                                }
+                            }  
+
+                            for(var k = house_id_arr.length ;k<batchList[j].batch_record.length;k++){
+
+                                if(batchList[j].batch_record[k].bird_record_date == lastDate){
+                                    console.log(batchList[j].batch_record[k]);
+                                    remainderBird = remainderBird + Number(batchList[j].batch_record[k].bird_balance);
+                                }
+                            }
+                        }
+                    }
+
+
+</script>

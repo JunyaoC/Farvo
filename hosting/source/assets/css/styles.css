@@ -1,0 +1,245 @@
+#indexBody{
+  display: flex;
+  background-color: #D3D0CB;
+}
+
+.mainWrapper {
+  margin-top: 30vh;
+  min-width: 100vw;
+  background-color: ;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mainCard {
+  min-width: 50vw;
+  height: 60vh;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  background-color: #FFD25A;
+}
+
+.registerInfo{
+  color:#32322C;
+  font-family:Cabin, sans-serif;
+}
+
+.farvoTitle {
+  font-size: 1.5rem;
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
+}
+
+.button {
+  color:rgb(246,247,243);
+}
+
+.button:hover {
+  color: rgb(0,0,0);
+}
+
+form {
+  max-width: 387px;
+  width: 90%;
+  margin: 0 auto;
+  /*background-color: #ffffff;*/
+  padding: 2rem;
+  border-radius: 4px;
+  color: #505e6c;
+  /*box-shadow: 1px 1px 5px rgba(0,0,0,0.1);*/
+}
+
+form .form-control {
+/*  background: #f7f9fc;*/
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+}
+
+form .forgot {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+form .forgot:hover, form .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.form-group {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.formDiv {
+  display: block;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: rgb(255,255,255);
+  position: relative;
+  width: 70%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.infoDiv{
+  display: block;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  border-radius: 0 1rem 1rem 0;
+  color: #FFE74C;
+}
+
+.divContent{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 1rem;
+}
+
+#signinForm .form-row div button{
+  border-radius: 2rem;
+  width: 140px;
+  height: 46px;
+}
+
+.phoneContent{
+  display: none;
+}
+
+.nav-title {
+  font-family: 'Cabin';
+  font-weight: 700;
+  font-size: 1rem;
+  color: black;
+}
+
+.companyDiv p{
+  padding: 0;
+  margin: 0;
+}
+
+.companyDiv {
+  width: 70%;
+  max-width: 500px;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+}
+
+.companyDivTitle {
+  font-size: 1.7rem;
+  font-weight: 900;
+  font-family: 'Cabin';
+  padding: 1rem 0 0 0;
+}
+
+
+
+.contentWrapper{
+
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: row;
+}
+
+.companyWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: 1s;
+  background-color:#E6E6E6;
+}
+
+.editDiv {
+  position: fixed;
+  top: 10vh;
+  width: 70%;
+  max-width: 400px;.
+  border-radius: 0.5rem;
+  height: 150px;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+  height: auto;
+  transition: 1s;
+}
+
+.addCompanyDiv {
+  width: 70%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  height: 150px;
+  background-color: white;
+}
+
+.jumbotron {
+  color: black;
+  background-color: white;
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  top: 0;
+  z-index: -10;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  #indexBody{
+    display: flex;
+    background-color: #FFD25A;
+  }
+  
+  .infoDiv{
+    display: none;
+  }
+
+  .formDiv {
+    display: block;
+    border-radius: 0.5rem;
+    background-color: rgb(255,255,255);
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  #signinForm{
+    padding: 0.25rem;
+  }
+
+  #signinForm .form-row div button{
+    border-radius: 2rem;
+    width: 100px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .phoneContent{
+    display: block;
+  }
+
+
+}
+
